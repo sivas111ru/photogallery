@@ -226,8 +226,8 @@ function custom_gallery($attr) {
 		<!-- see gallery_shortcode() in wp-includes/media.php -->";
 	$size_class = sanitize_html_class( $size );
 	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-	$output = "<script src=\"/wpPrj2/pdf/js/cookie.js\"></script><script src=\"/wpPrj2/pdf/js/addToPdf.js\"></script><link rel=\"stylesheet\" type=\"text/css\" href=\"/wpPrj2/pdf/css/addToPdf.css\">";
-	$output .= "<div onclick=\"location.href='/wpPrj2/pdf/pdf.html';\" class='staticCounter' id='staticCounterDivId'></div>";
+	$output = "<script src='../pdf/js/cookie.js'></script><script src='../pdf/js/addToPdf.js'></script><link rel='stylesheet' type='text/css' href='../pdf/css/addToPdf.css'>";
+	$output .= "<div onclick=\"location.href='../pdf/pdf.html';\" class='staticCounter' id='staticCounterDivId'></div>";
 	$output .= "<ul id='og-grid' class='og-grid'>";
 
 	$i = 0;
@@ -235,7 +235,7 @@ function custom_gallery($attr) {
 		//$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link_dani($id, $size, false, false) : wp_get_attachment_link_dani($id, $size, true, false, false, true);
         $link = wp_get_attachment_link_dani($id, $size, true, false, false, true);
 
-		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "<{$itemtag} class='gallery-item' style='position:relative'>";
 
         $output .= "<span class='addPdf added' style='display: none;' onmouseover='showHideAddToPdfSpan(this,1)' onmouseout='showHideAddToPdfSpan(this,0)' onclick='setUnsetButton(this)'></span>"; // new
 		
