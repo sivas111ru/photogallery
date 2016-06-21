@@ -517,6 +517,9 @@ function prevNextBtn() {
 
 		},
 		open : function() {
+			
+			this.$item.css( 'position', 'static' );
+			
 			setTimeout( $.proxy( function() {	
 				// set the height for the preview and the item
 				this.setHeights();
@@ -529,7 +532,7 @@ function prevNextBtn() {
 
 		},
 		close : function() {
-
+			this.$item.css( 'position', 'relative' );
 			var self = this,
 				onEndFn = function() {
 					if( support ) {

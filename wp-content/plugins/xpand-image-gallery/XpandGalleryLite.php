@@ -226,16 +226,21 @@ function custom_gallery($attr) {
 		<!-- see gallery_shortcode() in wp-includes/media.php -->";
 	$size_class = sanitize_html_class( $size );
 	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-	$output = "<ul id='og-grid' class='og-grid'>";
+	$output = "<script src='../pdfExporter/js/cookie.js'></script>";
+	$output.="<script src='../pdfExporter/js/addToPdf.js'></script>";
+	$output.="<link rel='stylesheet' type='text/css' href='../pdfExporter/css/addToPdf.css'>";
+	$output.= "<ul id='og-grid' class='og-grid'>";
+	
+	$output.= "<div onclick=\"location.href='../pdfExporter/pdf.html';\" class='staticCounter' id='staticCounterDivId'></div>";
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
 		//$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link_dani($id, $size, false, false) : wp_get_attachment_link_dani($id, $size, true, false, false, true);
         $link = wp_get_attachment_link_dani($id, $size, true, false, false, true);
 
-		$output .= "<{$itemtag} class='gallery-item'>";
-
-       // $output .= "<span class='add-to-pdf-btn'>Add To Pdf</span>"; // new
+		$output.= "<{$itemtag} class='gallery-item' style='position:relative'>";
+		$output.= "<span class='addPdf added' style='display: block;' onclick='setUnsetButton(this)'></span>";
+       // $output.= "<span class='add-to-pdf-btn'>Add To Pdf</span>"; 
 		
 		$output .= "$link";
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
