@@ -517,9 +517,7 @@ function prevNextBtn() {
 
 		},
 		open : function() {
-			
-			this.$item.css( 'position', 'static' );
-			
+			this.$item.css('position','static');
 			setTimeout( $.proxy( function() {	
 				// set the height for the preview and the item
 				this.setHeights();
@@ -532,7 +530,8 @@ function prevNextBtn() {
 
 		},
 		close : function() {
-			this.$item.css( 'position', 'relative' );
+		this.$item.css('position','relative');
+		
 			var self = this,
 				onEndFn = function() {
 					if( support ) {
@@ -594,6 +593,16 @@ function prevNextBtn() {
 
 			this.calcHeight();
 			this.$previewEl.css( 'height', this.height );
+			
+			if (this.height == 300)
+			{
+				
+			}
+			else
+			{
+				
+			}
+			
 			this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
 
 			if( !support ) {
@@ -616,8 +625,9 @@ function prevNextBtn() {
 
 		},
 		setTransition  : function() {
-			this.$previewEl.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
-			this.$item.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
+			this.$previewEl.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );			
+			this.$item.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );			
+			
 		},
 		getEl : function() {
 			return this.$previewEl;

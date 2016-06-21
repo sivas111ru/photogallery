@@ -11,21 +11,24 @@
   var cookieName = "picsList";
 function bodyLoad()
 {
+
 var inputWithLinks = document.getElementById('inputWithLinksId');
 var picDiv = document.getElementById('picturesDiv');
 inputWithLinks.value=getCookie(cookieName);
 var picturesArr = getCookie(cookieName).split(',');
 var listOfPics = document.createElement("ul");
+listOfPics.className = 'listStyle';
 	for (var i = 0; i < picturesArr.length;i++)
 	{
 		var newLi = document.createElement("li");
-		newLi.className = 'listStyle';
+		newLi.className = 'listItemStyle';
 		listOfPics.appendChild(newLi);
 	
 		var newSpan = document.createElement("span");
 		newSpan.className = 'addPdf added';
-		newSpan.setAttribute("onclick","setUnsetButton(this);");
+		newSpan.setAttribute("onclick","unsetImageSmoothDelete(this);");
 		newSpan.style.display = "block";
+		newSpan.style.opacity = "1";
 		newLi.appendChild(newSpan);
 			
 		var newImage = document.createElement("img");
@@ -43,7 +46,7 @@ picDiv.appendChild(listOfPics);
 
  </div>
    </br>
-    <div>
+    <div id = "chooseLayoutDiv">
  <form method="post" action="pdf/createPdf.php">
    </br>
  <p> 1.Choose Layout </p>

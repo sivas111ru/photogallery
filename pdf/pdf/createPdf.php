@@ -154,7 +154,7 @@ function addPageEnd($pdf)
     $pdf->SetTextColor(0,0,0);
     $pdf->SetFont('Arial','',16);
     $pdf->SetXY(leftMargin, bottomTextTopMargin);
-    $pdf->Write(16,'© Florian Bison |');
+    $pdf->Write(16,'© Name Lastname |');
     $pdf->SetTextColor(169,27,39);
     $pdf->Write(16,' View more ...','http://google.com');
 }

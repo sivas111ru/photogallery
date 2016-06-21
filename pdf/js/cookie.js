@@ -1,3 +1,4 @@
+
 function setCookie(name, value, options) {
   options = options || {};
 
@@ -27,9 +28,7 @@ function setCookie(name, value, options) {
   document.cookie = updatedCookie;
 }
 function deleteCookie(name) {
-  setCookie(name, "", {
-    expires: -1
-  })
+  setCookie(name, "", {expires: -1 ,path:'\/'} )
 }
 function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
