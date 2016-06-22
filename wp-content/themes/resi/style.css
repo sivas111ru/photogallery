@@ -456,7 +456,7 @@ hr {
 
 ul,
 ol {
-    margin: 0 0 0em -1em; /* EDITED SIVAS sub menu */
+    margin: 0 0 0em -1em; /* EDITED sub menu */
 }
 
 ul {
@@ -603,7 +603,7 @@ a:active {
     display: none;
     list-style: none;
     margin: 0;
-    padding-left: 230px; /* EDITED */
+    padding-left: 12.4%; /* EDITED */
     padding-right: 12%; /* EDITED */
 }
 
@@ -1306,7 +1306,7 @@ button.gallery-archive-button {
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 0em 3em 0; /*EDITED SIVAS grid*/
+    margin: 0em 3em 0; /*EDITED grid*/
 }
 
 .page-links {
@@ -1836,7 +1836,7 @@ body {
         margin-top: 10px;
         margin-bottom: 10px;
         padding-left: 0px;
-        padding-right: 10px; /* column-space */
+        padding-right: 0px; /* column-space  EDITED space right left grid*/
     }
     
     
@@ -2024,7 +2024,7 @@ body {
 }
 
 #authorName{
-    padding-left: 12.5%;
+    padding-left: 13%;
     margin-top: 50px;
 }
 

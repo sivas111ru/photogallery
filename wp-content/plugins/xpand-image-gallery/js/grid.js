@@ -376,20 +376,18 @@ function prevNextBtn() {
 		var preview = $.data( this, 'preview' ),
 			// item´s offset top
 			position = $item.data( 'offsetTop' );
+
 		scrollExtra = 0;
-        
-         
+
 		// if a preview exists and previewPos is different (different row) from item´s top then close it
 		if( typeof preview != 'undefined' ) {
 			// not in the same row
 			if( previewPos !== position ) {
-
 				hidePreview();
 			}
 			// same row
 			else {
 				preview.update( $item );
-
 				return false;
 			}
 			
@@ -400,9 +398,6 @@ function prevNextBtn() {
 		// initialize new preview for the clicked item
 		preview = $.data( this, 'preview', new Preview( $item ) );
 		// expand preview overlay
-        
-        $('#nav-header').removeClass('nav-up').addClass('nav-down'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
-
 		preview.open();
 
 	}
@@ -517,21 +512,17 @@ function prevNextBtn() {
 
 		},
 		open : function() {
-			this.$item.css('position','static');
+
 			setTimeout( $.proxy( function() {	
 				// set the height for the preview and the item
 				this.setHeights();
 				// scroll to position the preview in the right place
 				this.positionPreview();
-                
-                 console.log("Opened2");
-                
 			}, this ), 25 );
 
 		},
 		close : function() {
-		this.$item.css('position','relative');
-		
+
 			var self = this,
 				onEndFn = function() {
 					if( support ) {
@@ -593,16 +584,6 @@ function prevNextBtn() {
 
 			this.calcHeight();
 			this.$previewEl.css( 'height', this.height );
-			
-			if (this.height == 300)
-			{
-				
-			}
-			else
-			{
-				
-			}
-			
 			this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
 
 			if( !support ) {
@@ -616,18 +597,16 @@ function prevNextBtn() {
 			// case 1 : preview height + item height fits in window´s height
 			// case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
 			// case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
-            var navHeigth = $('#nav-header').outerHeight();
 			var position = this.$item.data( 'offsetTop' ),
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-				scrollVal = position + 350 - navHeigth;//this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+				scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
 
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
 
 		},
 		setTransition  : function() {
-			this.$previewEl.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );			
-			this.$item.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );			
-			
+			this.$previewEl.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
+			this.$item.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
 		},
 		getEl : function() {
 			return this.$previewEl;

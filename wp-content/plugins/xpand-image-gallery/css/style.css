@@ -4,11 +4,11 @@
 
 	list-style: none;
 
-	/*padding: 20px 0 !important;
+	padding: 20px 0 !important;
 
-	margin: 0 auto;*/
+	margin: 0 auto;
 
-	text-align: left;
+	text-align: center;
 
 	width: 100%;
 
@@ -84,7 +84,7 @@
 
 	position: absolute;
 
-	background:  #222;
+	background:  #FFF; /* EDITED */
 
 	top: auto;
 
@@ -111,8 +111,6 @@
 	padding: 30px 30px;
 
 	height: 100%;
-    
-    background: #FFF;
 
 }
 
@@ -122,13 +120,13 @@
 
 	position: absolute;
 
-	width: 40px;  
+	width: 40px;
 
 	height: 40px;
 
-	top: 37px;
+	top: 20px;
 
-	right: 265px;
+	right: 20px;
 
 	cursor: pointer;
 
@@ -193,9 +191,6 @@
 	overflow: hidden;
 
 	position: relative;
-    padding-right: 0%;
-    margin-bottom: 120px;
-    
 
 }
 
@@ -450,7 +445,7 @@ li.gallery-item{list-style:none !important;}
     cursor: pointer;
     position: absolute;
     bottom: 50%;
-    left: 265px !important;
+    left: 10px !important;
     font-size: 50px;
     text-decoration:none;
     color: #999;
@@ -460,7 +455,7 @@ li.gallery-item{list-style:none !important;}
     cursor: pointer;
     position: absolute;
     bottom: 50%;
-    right: 265px !important;
+    right: 10px !important;
     left: inherit !important;
     font-size: 50px;
     text-decoration:none;
