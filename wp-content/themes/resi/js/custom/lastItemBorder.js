@@ -29,3 +29,29 @@ jQuery(document).ready(function ($) {
 
     $(window).on("resize", drawMenuLines);
 })
+
+
+
+jQuery(document).ready(function ($) {
+    var addClassNew = function () {
+        var lastElement = false;
+        $('#primary-menu > li').each(function () {
+
+            var el = $(this).children().eq(0).children().eq(0);
+            if ( (el.html() == "ABOUT") || (el.html() == "INSTAGRAM") || (el.html() == "IMPRINT"))
+                {
+                     $(this).children().eq(0).children().eq(0).addClass("lowercase");
+                }
+           })
+    };
+
+
+
+
+
+    addClassNew();
+
+
+
+    $(window).on("resize", addClassNew);
+})

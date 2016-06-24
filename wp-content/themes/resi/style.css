@@ -100,6 +100,12 @@ and Blueprint http://www.blueprintcss.org/
   font-style: normal;
 } 
 
+@font-face {
+        font-family: "SrPro";
+        font-style: normal;
+        src: url("../fonts/PTF55F.ttf") format("truetype"); /* non-IE */
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -603,8 +609,9 @@ a:active {
     display: none;
     list-style: none;
     margin: 0;
-    padding-left: 12%; /* EDITED */
-    padding-right: 12%; /* EDITED */
+    padding-left: 0px; /* EDITED */
+    padding-right: 0px; /* EDITED */
+    font-family: "SrPro", serif
 }
 
 .main-navigation li {
@@ -1644,7 +1651,7 @@ body {
 
 [class*='col-'] {
     float: left;
-    padding-right: 20px; /* column-space */
+    padding-right: 0px; /* column-space EDITED */
 }
 
 .grid {
@@ -2024,8 +2031,11 @@ body {
 }
 
 #authorName{
-    padding-left: 12.6%;
+   
+    padding-left: 10px;
+    padding-right: 0%;
     margin-top: 50px;
+    font-family: "SrPro", serif
 }
 
 /* navigation hides on scroll */
@@ -2126,3 +2136,13 @@ body {
     padding: 0px;
 }
 /* #Submenu nav */
+
+.lowercase{
+    text-transform: lowercase;
+}
+
+#topmenud{
+    position: relative;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+}

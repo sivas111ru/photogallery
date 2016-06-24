@@ -28,7 +28,8 @@
     <div id="nav-header">  <!-- class="pre-header"> EDITED-->
        
 <div id="menu-bar">
-    <div id="authorName">
+ <div id="topmenud">
+       <div id="authorName">
         <h2>KEITH SCHOFIELD</h2>
         <h4>PHOTAGRAPHY</h4></div>
     <div class="navigation-container">
@@ -68,6 +69,7 @@
         <!-- #site-navigation -->
 
     </div>
+</div>
     </div>
         
         <?php if( get_theme_mod( 'active_social_icons' ) == '') : ?>   
