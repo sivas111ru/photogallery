@@ -2119,7 +2119,7 @@ body {
 /* Submenu nav */ 
 
 .sub-menu > li {
-    padding-left: 15px !important;
+    padding-left: 27px !important;
 }
 
 .entry-title {
@@ -2143,6 +2143,5 @@ body {
 
 #topmenud{
     position: relative;
-    padding-left: 12.5%;
-    padding-right: 12.5%;
+    padding-left: 38px;
 }

@@ -3,6 +3,10 @@ jQuery(document).ready(function ($) {
         var lastElement = false;
         var element_on_row = 0;
         var prevElement = null;
+        /*.position().left; og-grid */
+        
+        
+        $('#topmenud').css('left', $('#og-grid').position().left);
         $('#og-grid > li').each(function () {
 
             if (lastElement && lastElement.offset().top != $(this).offset().top) {
