@@ -30,11 +30,15 @@ jQuery(document).ready(function ($) {
 
     $(window).on("resize", resizeImages);
     
+    $(window).on("resize", setTimeout(resizeImages,100));
+    
     function resizeGridImages(current, prev) {
 
 
         $('#topmenud').css('left', $('#og-grid').position().left); /* F1 */
-        $('#site-navigation').css('max-width', $('#og-grid').offsetParent().width() ); /* F2 */
+        $('#site-navigation').css('max-width', $('#og-grid').width()*0.98); /* F2 */
+        
+        console.log($('#og-grid').width());
 
         if ((current.children().eq(0).children().eq(0).offsetParent().width() && prev.children().eq(0).children().eq(0).offsetParent().width()) == 225) {
             current.children().eq(0).children().eq(0).css("width", 226.5);

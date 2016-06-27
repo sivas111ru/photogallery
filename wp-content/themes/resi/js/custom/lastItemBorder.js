@@ -28,6 +28,8 @@ jQuery(document).ready(function ($) {
 
 
     $(window).on("resize", drawMenuLines);
+    
+    $(window).on("resize", setTimeout(drawMenuLines,100));
 })
 
 

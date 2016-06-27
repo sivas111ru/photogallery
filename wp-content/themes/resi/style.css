@@ -2145,7 +2145,13 @@ letter-spacing: 4px;
 }
 
 .entry-title {
-    padding-top: 60px;
+    padding-top: 20px;
+    
+color: #ff07fb;
+font-family: PTSerif;
+font-size: 18px;
+font-weight: 400;
+    letter-spacing: 3px;
 }
 
 
