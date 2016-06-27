@@ -31,7 +31,7 @@
  <div id="topmenud">
        <div id="authorName">
         <h2>KEITH SCHOFIELD</h2>
-        <h4>PHOTAGRAPHY</h4></div>
+        <h4>PHOTOGRAPHY</h4></div>
     <div class="navigation-container">
 
         <nav id="site-navigation" class="main-navigation" role="navigation">

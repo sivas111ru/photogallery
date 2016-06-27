@@ -93,19 +93,17 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-} 
-
-@font-face {
-        font-family: "SrPro";
-        font-style: normal;
-        src: url("../fonts/PTF55F.ttf") format("truetype"); /* non-IE */
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: PTSerif;
+    src: url("fonts/PTF55F.ttf"); /* EDITED */
+}
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -611,7 +609,7 @@ a:active {
     margin: 0;
     padding-left: 0px; /* EDITED */
     padding-right: 0px; /* EDITED */
-    font-family: "SrPro", serif
+    font-family: PTSerif;
 }
 
 .main-navigation li {
@@ -619,18 +617,27 @@ a:active {
     position: relative;
 }
 
-.main-navigation a {
+.main-navigation a { /* EDITED menu font*/
     display: block;
     text-decoration: none;
-    padding: 14px 12px;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 400;
     text-transform: uppercase;
-    color: #888;
+    color: #3c3c3b;/*#888;*/
     -webkit-transition: ease-in-out 0.2s;
     -moz-transition: ease-in-out 0.2s;
     -o-transition: ease-in-out 0.2s;
     transition: ease-in-out 0.2s;
+    line-height: 24px;
+}
+
+#primary-menu li{ /* EDITED space between menu el*/
+        padding-right: 23px; 
+    padding-left: 23px;
+}
+
+#primary-menu li:first-child{
+    padding-left: 10px;
 }
 
 .main-navigation ul ul {
@@ -2001,8 +2008,8 @@ body {
 
 #mainMenu
 {
-    letter-spacing: 3px;
-    font-weight: bold;
+    letter-spacing: 2px;
+    font-weight: 400;
     text-align: center !important;
 }
 
@@ -2035,8 +2042,23 @@ body {
     padding-left: 10px;
     padding-right: 0%;
     margin-top: 50px;
-    font-family: "SrPro", serif
+    font-family: PTSerif;
 }
+
+#authorName h2 {
+    font-size: 30px;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 7px;
+}
+
+#authorName h4 {
+font-size: 18px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 4px;
+}
+
 
 /* navigation hides on scroll */
 #nav-header {
@@ -2144,4 +2166,14 @@ body {
 #topmenud{
     position: relative;
     padding-left: 38px;
+}
+
+.menu-image-title{
+font-family: PTSerif;
+}
+
+#site-navigation{
+    
+margin-top: 47px;        
+max-width: 500px;
 }

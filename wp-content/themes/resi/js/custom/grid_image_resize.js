@@ -6,7 +6,6 @@ jQuery(document).ready(function ($) {
         /*.position().left; og-grid */
         
         
-        $('#topmenud').css('left', $('#og-grid').position().left);
         $('#og-grid > li').each(function () {
 
             if (lastElement && lastElement.offset().top != $(this).offset().top) {
@@ -33,11 +32,15 @@ jQuery(document).ready(function ($) {
     
     function resizeGridImages(current, prev) {
 
-            if ( (current.children().eq(0).children().eq(0).offsetParent().width() && prev.children().eq(0).children().eq(0).offsetParent().width()) == 225) {
-                current.children().eq(0).children().eq(0).css("width", 226.5);
-                prev.children().eq(0).children().eq(0).css("width", 226.5);  // 463 / 2 - 2.5   ||  large/2 - (border/2)
-            }
-}
+
+        $('#topmenud').css('left', $('#og-grid').position().left); /* F1 */
+        $('#site-navigation').css('max-width', $('#og-grid').offsetParent().width() ); /* F2 */
+
+        if ((current.children().eq(0).children().eq(0).offsetParent().width() && prev.children().eq(0).children().eq(0).offsetParent().width()) == 225) {
+            current.children().eq(0).children().eq(0).css("width", 226.5);
+            prev.children().eq(0).children().eq(0).css("width", 226.5); // 463 / 2 - 2.5   ||  large/2 - (border/2)
+        }
+    }
 
 
 })
