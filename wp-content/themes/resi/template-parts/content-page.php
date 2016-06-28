@@ -14,10 +14,10 @@
 		
 
 		<?php wp_nav_menu(array("menu_id" => "SubMenuNavigation")); ?>
-		
+		<br style="clear:both;" />
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>  <!--EDITED SIVAS -->
 
-		<br style="clear:both;" />
+		<!--<br style="clear:both;" />-->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

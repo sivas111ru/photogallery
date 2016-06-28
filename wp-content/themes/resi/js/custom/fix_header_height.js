@@ -6,6 +6,6 @@
     }
 
     fixHeaderHeight();
-
+	$(window).on("ready", setTimeout(fixHeaderHeight,500));
     $(window).on("resize", fixHeaderHeight);
 })(jQuery);
