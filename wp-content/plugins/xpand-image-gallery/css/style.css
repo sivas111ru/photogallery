@@ -27,7 +27,8 @@
 	vertical-align: top;
 
 	list-style:none !important;
-
+    
+    text-align: left !important;
 }
 
 
@@ -124,9 +125,9 @@
 
 	height: 40px;
 
-	top: 20px;
+	top: 22px;
 
-	right: 20px;
+	
 
 	cursor: pointer;
 
@@ -445,7 +446,6 @@ li.gallery-item{list-style:none !important;}
     cursor: pointer;
     position: absolute;
     bottom: 50%;
-    left: 10px !important;
     font-size: 50px;
     text-decoration:none;
     color: #999;
@@ -455,7 +455,6 @@ li.gallery-item{list-style:none !important;}
     cursor: pointer;
     position: absolute;
     bottom: 50%;
-    right: 10px !important;
     left: inherit !important;
     font-size: 50px;
     text-decoration:none;

@@ -398,7 +398,24 @@ function prevNextBtn() {
 		// initialize new preview for the clicked item
 		preview = $.data( this, 'preview', new Preview( $item ) );
 		// expand preview overlay
+        
+        $('#nav-header').removeClass('nav-down').addClass('nav-up'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
+        
 		preview.open();
+        
+
+          /* EDITED SIVAS  Close button and arrows position */
+        
+        var abc = $('#topmenud').width();  
+        var cba = $(window).width();
+        var ccc = $( ".og-close" ).width()
+      
+        var resLeft = (abc + ( ((cba-abc)/2) )) - ccc;
+        var resRight = ( ((cba-abc)/2) );
+        
+        $( ".og-close" ).css('left',resLeft);
+        $( ".prevLnk" ).css('right',resLeft);
+        $( ".nextLnk" ).css('right',resRight);
 
 	}
 
@@ -597,10 +614,11 @@ function prevNextBtn() {
 			// case 1 : preview height + item height fits in window´s height
 			// case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
 			// case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
+            var navHeigth = $('#nav-header').outerHeight();
 			var position = this.$item.data( 'offsetTop' ),
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-				scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-
+				//scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+                scrollVal = position + 250 - navHeigth;
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
 
 		},
