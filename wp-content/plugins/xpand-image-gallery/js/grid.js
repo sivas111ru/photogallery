@@ -403,8 +403,6 @@ function prevNextBtn() {
         $('#nav-header').removeClass('nav-up').addClass('nav-down'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
         
 		preview.open();
-        
-        $(".og-expander-inner").append('<span class="authorLabel">KEITH SCHOFIELD</span>');  /* EDITED ADD AUTHRO LABEL */
 
           /* EDITED SIVAS  Close button and arrows position */
         
