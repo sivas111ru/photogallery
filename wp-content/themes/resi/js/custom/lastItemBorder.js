@@ -13,9 +13,19 @@ jQuery(document).ready(function ($) {
 				maxWidthPlusLeft = $(this).children().position().left + $(this).children().width();
 			}
         })
-		var panelWidth = maxWidthPlusLeft - minLeft;
-		$('#topmenud').css('left',minLeft-23);  // KASTIL
-		$('#topmenud').css('width',panelWidth+23);	// KASTIL
+		//alert (minLeft+"-"+maxWidthPlusLeft);
+		if (minLeft == 10000 || maxWidthPlusLeft == 0)
+		{
+			$('#topmenud').css('left', 23);  // KASTIL
+			$('#topmenud').css('width', '100%');	// KASTIL
+		}
+		else
+		{
+			var panelWidth = maxWidthPlusLeft - minLeft;
+			$('#topmenud').css('left',minLeft-23);  // KASTIL
+			$('#topmenud').css('width',panelWidth+23);	// KASTIL
+		}
+		
 		
         var lastElement = false;
         $('#primary-menu > li').each(function () {
