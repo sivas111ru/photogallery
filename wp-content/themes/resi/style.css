@@ -637,7 +637,7 @@ a:active {
 }
 
 #primary-menu li:first-child{
-    padding-left: 10px;
+    //padding-left: 10px;
 }
 
 .main-navigation ul ul {
@@ -2039,7 +2039,7 @@ body {
 
 #authorName{
    
-    padding-left: 10px;
+    padding-left: 23px;
     padding-right: 0%;
     margin-top: 50px;
     font-family: PTSerif;
@@ -2171,7 +2171,7 @@ font-weight: 400;
 
 #topmenud{
     position: relative;
-    padding-left: 38px;
+    //padding-left: 38px;
 }
 
 .menu-image-title{

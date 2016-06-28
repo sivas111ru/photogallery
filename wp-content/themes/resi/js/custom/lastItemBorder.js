@@ -1,5 +1,22 @@
 jQuery(document).ready(function ($) {
     var drawMenuLines = function () {
+		var minLeft = 10000;
+		var maxWidthPlusLeft = 0;
+		var maxWidth = 0;
+		$('#og-grid > li').each(function () {
+			if ($(this).children().position().left < minLeft)
+			{
+				minLeft = $(this).children().position().left;
+			}			
+			if ($(this).children().position().left + $(this).children().width() > maxWidthPlusLeft)
+			{
+				maxWidthPlusLeft = $(this).children().position().left + $(this).children().width();
+			}
+        })
+		var panelWidth = maxWidthPlusLeft - minLeft;
+		$('#topmenud').css('left',minLeft-23);  // KASTIL
+		$('#topmenud').css('width',panelWidth+23);	// KASTIL
+		
         var lastElement = false;
         $('#primary-menu > li').each(function () {
             if (lastElement) {
@@ -9,7 +26,6 @@ jQuery(document).ready(function ($) {
             if (lastElement && lastElement.offset().top != $(this).offset().top) {
                 lastElement.addClass("noborder");
             }
-
             /*      if (!$(this).has('ul').length)
                       lastElement = $(this);
                   else {
@@ -19,16 +35,9 @@ jQuery(document).ready(function ($) {
         }).last().addClass("noborder");
     };
 
-
-
-
-
     drawMenuLines();
 
-
-
     $(window).on("resize", drawMenuLines);
-    
     $(window).on("resize", setTimeout(drawMenuLines,100));
 })
 

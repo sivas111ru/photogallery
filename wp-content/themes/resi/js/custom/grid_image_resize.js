@@ -2,10 +2,7 @@ jQuery(document).ready(function ($) {
     var resizeImages = function () {
         var lastElement = false;
         var element_on_row = 0;
-        var prevElement = null;
-        /*.position().left; og-grid */
-        
-        
+        var prevElement = null;     
         $('#og-grid > li').each(function () {
 
             if (lastElement && lastElement.offset().top != $(this).offset().top) {
@@ -17,25 +14,16 @@ jQuery(document).ready(function ($) {
 
             lastElement = $(this);
             prevElement = $(this);
-            
            /* console.log($(this).children().eq(0).children().eq(0));*/
-            resizeGridImages($(this),prevElement)
-
+            resizeGridImages($(this),prevElement);
         })
     };
 
-
-
     resizeImages();
-
     $(window).on("resize", resizeImages);
-    
     $(window).on("resize", setTimeout(resizeImages,100));
     
     function resizeGridImages(current, prev) {
-
-
-        $('#topmenud').css('left', $('#og-grid').position().left); /* F1 */
         $('#site-navigation').css('max-width', $('#og-grid').width()*0.98); /* F2 */
         
         console.log($('#og-grid').width());
