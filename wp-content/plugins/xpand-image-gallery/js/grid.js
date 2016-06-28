@@ -399,10 +399,12 @@ function prevNextBtn() {
 		preview = $.data( this, 'preview', new Preview( $item ) );
 		// expand preview overlay
         
-        $('#nav-header').removeClass('nav-down').addClass('nav-up'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
+                                        
+        $('#nav-header').removeClass('nav-up').addClass('nav-down'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
         
 		preview.open();
         
+        $(".og-expander-inner").append('<span class="authorLabel">KEITH SCHOFIELD</span>');  /* EDITED ADD AUTHRO LABEL */
 
           /* EDITED SIVAS  Close button and arrows position */
         
@@ -614,17 +616,19 @@ function prevNextBtn() {
 			// case 1 : preview height + item height fits in window´s height
 			// case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
 			// case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
+            
+            getWinSize();
             var navHeigth = $('#nav-header').outerHeight();
 			var position = this.$item.data( 'offsetTop' ),
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-				//scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-                scrollVal = position + 250 - navHeigth;
+				scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+                //scrollVal = position + 250 - navHeigth;
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
 
 		},
 		setTransition  : function() {
-			this.$previewEl.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
-			this.$item.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
+			this.$previewEl.css( 'transition', 'height ' + 0 + 'ms ' + settings.easing );
+			this.$item.css( 'transition', 'height ' + 0 + 'ms ' + settings.easing );
 		},
 		getEl : function() {
 			return this.$previewEl;

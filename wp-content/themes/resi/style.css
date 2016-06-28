@@ -2183,3 +2183,10 @@ font-family: PTSerif;
 margin-top: 47px;        
 max-width: 500px;
 }
+
+.authorLabel{
+    position: absolute;
+    top: 0px;
+    left: 45%;
+    padding-top: 3px;
+}
