@@ -626,13 +626,13 @@ function prevNextBtn() {
 // EDITED VLAD
             var self = this;
             window.is_preview_opening = true;
-            $('#nav-header').removeClass('nav-down').addClass('nav-up');
+            $('#nav-header').removeClass('nav-up').addClass('nav-down');
             
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed, function() {
               clearTimeout(self.doit);
               self.doit = setTimeout(function(){
                 window.is_preview_opening = false;
-              }, 1000);
+              }, settings.speed);
             });
 
 
