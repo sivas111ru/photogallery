@@ -645,7 +645,7 @@ function prevNextBtn() {
             
             getWinSize();
             var navHeigth = $('#nav-header').outerHeight();
-			var position = this.$item.data( 'offsetTop' ) + 317 - navHeigth,
+			var position = this.$item.data( 'offsetTop' ) - navHeigth,
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra;
 				//var scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
 				var scrollVal = previewOffsetT+1;//-navHeigth +1; //Vahe code// always scroll bottom to bottom of preview image
