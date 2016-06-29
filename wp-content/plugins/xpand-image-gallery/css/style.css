@@ -109,7 +109,7 @@
 
 .og-expander-inner {
 
-	padding: 30px 30px;
+	/*padding: 30px 30px;*/  /* EDITED */
 
 	height: 100%;
 
@@ -173,56 +173,31 @@
 
 }
 
-
-
 .og-close:hover::before,
 
 .og-close:hover::after {
 
 	background: #333;
-
 }
-
-
 
 .og-fullimg{
-
 	width: 100%;
-
 	overflow: hidden;
-
-	position: relative;
-    
-    margin-top: 10px; /* EDITED */
-    
-    margin-bottom: 60px; /* EDITED */
-
+	position: relative; 
+    margin-top: 10px; /* EDITED */   
+    margin-bottom: 10px; /* EDITED */
 }
 
-
-
-
-
 .og-details {
-
 	width: 30%;
-
 	float: left;
-
 	height: 475px;
-
 	overflow: hidden;
-
 	position: relative;
-
 }
 
-
-
 .og-details {
-
 	padding: 0 40px 0 0px;
-
 }
 
 
