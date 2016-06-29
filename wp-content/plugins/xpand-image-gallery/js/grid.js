@@ -623,6 +623,8 @@ function prevNextBtn() {
 			
 			var picRealHeight = this.$previewEl.children('div').eq(0).children('div').eq(0).children('img').eq(0).height(); //850
 			var mainPicHeight = this.$previewEl.parent().children('a').eq(0).children('img').eq(0).height();  //300
+			if (picRealHeight<500) picRealHeight = 850;
+			if (picRealHeight<295) picRealHeight = 300;
 			if (freeSpace < mainPicHeight+marginSize) // preview will never be smaller than main pic
 				freeSpace = mainPicHeight+marginSize;
 			if (freeSpace > picRealHeight + marginSize)
