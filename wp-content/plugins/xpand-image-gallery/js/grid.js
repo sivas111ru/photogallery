@@ -618,19 +618,21 @@ function prevNextBtn() {
 				// -> -> -> -> image    // preview image							
 			getWinSize();
 			
-			var freeSpace = winsize.height - $('#nav-header').outerHeight();
-			var marginSize = 50;
 			
+			var marginSize = 100;
+			var freeSpace = winsize.height;// - $('#nav-header').outerHeight();
 			var picRealHeight = this.$previewEl.children('div').eq(0).children('div').eq(0).children('img').eq(0).height(); //850
 			var mainPicHeight = this.$previewEl.parent().children('a').eq(0).children('img').eq(0).height();  //300
+			if (picRealHeight<500) picRealHeight = 850;
+			if (mainPicHeight<295) mainPicHeight = 300;
 			if (freeSpace < mainPicHeight+marginSize) // preview will never be smaller than main pic
 				freeSpace = mainPicHeight+marginSize;
 			if (freeSpace > picRealHeight + marginSize)
 				freeSpace = picRealHeight + marginSize;
+			
 			this.$previewEl.parent().css( 'height', freeSpace + mainPicHeight+marginSize ); // LI 
-			this.$previewEl.css( 'height', freeSpace ); // div1			
-			this.$previewEl.children('div').eq(0).children('div').eq(0).css( 'height', freeSpace - marginSize ); // div 111 // -50 margins
-			console.log();
+			this.$previewEl.css( 'height', freeSpace+marginSize ); // div1			
+			this.$previewEl.children('div').eq(0).children('div').eq(0).css( 'height', freeSpace  ); // div 111 // -50 margins
 			//Vahe code		
 			
 		},
@@ -646,7 +648,7 @@ function prevNextBtn() {
 			var position = this.$item.data( 'offsetTop' ) + 317 - navHeigth,
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra;
 				//var scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-				var scrollVal = previewOffsetT-navHeigth +1; //Vahe code// always scroll bottom to bottom of preview image
+				var scrollVal = previewOffsetT+1;//-navHeigth +1; //Vahe code// always scroll bottom to bottom of preview image
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
             
 // EDITED VLAD
@@ -669,6 +671,10 @@ function prevNextBtn() {
 		},
 		getEl : function() {
 			return this.$previewEl;
+		}
+		,
+		setFreeSpace : function() {
+			
 		}
 	}
 
