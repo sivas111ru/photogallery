@@ -1,20 +1,23 @@
 /* General styles for all menus */
 .cbp-spmenu {
-    background: #222;
+    background: #FFF;
     position: fixed;
+    z-index: 9999999;
 }
 
 .cbp-spmenu ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+    z-index: 9999999;
 }
 
 .cbp-spmenu ul a {
     display: block;
-    color: #fff;
+    color: black;
     font-size: 1em;
     font-weight: 600;
+    z-index: 9999999;
 }
 
 .cbp-spmenu ul ul a {
@@ -32,6 +35,7 @@
     top: 0;
     z-index: 1000;
     overflow-y: scroll;
+    z-index: 9999999;
 }
 
 .cbp-spmenu-vertical ul a {

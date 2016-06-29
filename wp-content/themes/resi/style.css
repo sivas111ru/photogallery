@@ -709,13 +709,16 @@ button.toggle-menu {
     height: 45px;
 }
 
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 1200px) and (min-height: 770px) {
     .menu-toggle {
         display: none;
     }
     .main-navigation ul {
         display: block;
     }
+    
+
+    
 }
 
 .site-main .comment-navigation,
@@ -2046,14 +2049,14 @@ body {
 }
 
 #authorName h2 {
-    font-size: 30px;
+    font-size: 28px;
 font-weight: 700;
 line-height: 20px;
 letter-spacing: 7px;
 }
 
 #authorName h4 {
-font-size: 18px;
+font-size: 16px;
 font-weight: 400;
 line-height: 20px;
 letter-spacing: 4px;
@@ -2064,7 +2067,7 @@ letter-spacing: 4px;
 #nav-header {
     position: fixed;
     background: white;
-    z-index: 9999999;
+    z-index: 9999998;
     -webkit-transition: top 0.3s ease-out;
        -moz-transition: top 0.3s ease-out;
         -ms-transition: top 0.3s ease-out;
@@ -2183,3 +2186,13 @@ font-family: PTSerif;
 margin-top: 47px;        
 /*max-width: 500px;*/
 }
+
+#smMenuBtn{
+    position: fixed;
+    top: 170px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+

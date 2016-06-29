@@ -14,6 +14,32 @@
 
 get_header(); ?>
 
+
+            <button id="smMenuBtn" class="menu-toggle toggle-menu menu-left push-body" aria-controls="primary-menu" aria-expanded="false">
+
+                <?php $resi_menu_toggle_option = get_theme_mod( 'resi_menu_toggle', 'icon' ); 
+
+					$resi_menu_display = '';
+
+					if ( $resi_menu_toggle_option == 'icon' ) {
+				
+						$resi_menu_display = sprintf( '<i class="fa fa-bars"></i>' );
+			
+					} else if ( $resi_menu_toggle_option == 'label' ) {
+				
+						$resi_menu_display = esc_html__( 'Menu', 'resi' );
+			
+					} else if ( $resi_menu_toggle_option == 'icon-label' ) {
+				
+						$resi_menu_display = sprintf( '<i class="fa fa-bars"></i>', esc_html__( 'Menu', 'resi' ) );    
+			
+					}
+
+					echo $resi_menu_display; ?>
+
+            </button>
+            
+            
 <div class="grid grid-pad solid-background">
 	<div class="col-9-12">
         <div id="primary" class="content-area">
