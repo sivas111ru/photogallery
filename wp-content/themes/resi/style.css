@@ -717,6 +717,10 @@ button.toggle-menu {
         display: block;
     }
     
+    .navigation-container{
+        display: none;
+    }
+    
 
     
 }
@@ -1069,6 +1073,7 @@ button.toggle-menu {
 }
 
 .navigation-container {
+    display: none; /* EDITED */
     width: auto;
     display: inline-block;
 }
