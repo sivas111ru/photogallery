@@ -400,7 +400,7 @@ function prevNextBtn() {
 		// expand preview overlay
         
                                         
-        $('#nav-header').removeClass('nav-up').addClass('nav-down'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
+        // $('#nav-header').removeClass('nav-up').addClass('nav-down'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
         
 		preview.open();
 
@@ -621,7 +621,17 @@ function prevNextBtn() {
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra,
 				scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
                 //scrollVal = position + 250 - navHeigth;
-            $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
+// EDITED VLAD
+            var self = this;
+            window.is_preview_opening = true;
+            $('#nav-header').removeClass('nav-down').addClass('nav-up');
+            
+            $('html, body').animate( { scrollTop : scrollVal }, settings.speed, function() {
+              clearTimeout(self.doit);
+              self.doit = setTimeout(function(){
+                window.is_preview_opening = false;
+              }, 1000);
+            });
 
 		},
 		setTransition  : function() {
