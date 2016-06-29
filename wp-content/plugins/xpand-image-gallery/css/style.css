@@ -22,7 +22,7 @@
 
 	display: inline-block;
 
-	margin: 10px 5px 0 !important;
+	margin: 10px 5px 0;
 
 	vertical-align: top;
 
@@ -192,6 +192,10 @@
 	overflow: hidden;
 
 	position: relative;
+    
+    margin-top: 60px; /* EDITED */
+    
+    margin-bottom: 60px; /* EDITED */
 
 }
 

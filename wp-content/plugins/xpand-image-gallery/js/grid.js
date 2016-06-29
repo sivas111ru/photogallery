@@ -585,8 +585,8 @@ function prevNextBtn() {
 			//end dani
 			
 			
-			this.height = heightPreview;
-			this.itemHeight = itemHeight;
+			this.height = heightPreview; /* EDITED */
+			this.itemHeight = itemHeight+150;
 
 		},
 		setHeights : function() {
@@ -617,10 +617,10 @@ function prevNextBtn() {
             
             getWinSize();
             var navHeigth = $('#nav-header').outerHeight();
-			var position = this.$item.data( 'offsetTop' ),
+			var position = this.$item.data( 'offsetTop' ) + 317 - navHeigth,
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-				scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-                //scrollVal = position + 250 - navHeigth;
+				scrollVal = this.height  + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+                //scrollVal = position + 305 - navHeigth;
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
 
 		},
