@@ -416,6 +416,9 @@ function prevNextBtn() {
         $( ".og-close" ).css('left',resLeft);
         $( ".prevLnk" ).css('right',resLeft);
         $( ".nextLnk" ).css('right',resRight);
+        
+        $( "#smMenuBtn" ).css('left',resLeft);
+        
 
 	}
 

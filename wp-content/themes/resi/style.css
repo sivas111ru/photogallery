@@ -2194,10 +2194,11 @@ margin-top: 47px;
 
 #smMenuBtn{
     position: fixed;
-    top: 170px;
-    left: 20px;
+    top: 30px;
+    left: 800px;
     width: 50px;
     height: 50px;
+    z-index: 9999998;
 }
 
 

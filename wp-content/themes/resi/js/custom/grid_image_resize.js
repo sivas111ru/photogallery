@@ -26,6 +26,19 @@ jQuery(document).ready(function ($) {
     function resizeGridImages(current, prev) {
         $('#site-navigation').css('max-width', $('#og-grid').width()*0.98); /* F2 */
         
+        /* BUTTON smMenu pos */
+        var abc = $('#topmenud').width();  
+        var cba = $(window).width();
+        var ccc = $( "#smMenuBtn" ).width()
+      
+        var resLeft = (abc + ( ((cba-abc)/2) )) - ccc;
+        var resRight = ( ((cba-abc)/2) );
+        
+
+        $( "#smMenuBtn" ).css('left',resLeft);
+        /* BUTTON smMenu pos end */
+        
+        
         console.log($('#og-grid').width());
 
         if ((current.children().eq(0).children().eq(0).offsetParent().width() && prev.children().eq(0).children().eq(0).offsetParent().width()) == 225) {
