@@ -617,10 +617,11 @@ function prevNextBtn() {
 				// -> -> -> -> div 1111 // loading div
 				// -> -> -> -> image    // preview image							
 			getWinSize();
-			
+		    var ignoreNavBar = false;
 			
 			var marginSize = 100;
-			var freeSpace = winsize.height;// - $('#nav-header').outerHeight();
+			var freeSpace = ignoreNavBar?winsize.height:winsize.height- $('#nav-header').outerHeight()-marginSize;
+			
 			var picRealHeight = this.$previewEl.children('div').eq(0).children('div').eq(0).children('img').eq(0).height(); //850
 			var mainPicHeight = this.$previewEl.parent().children('a').eq(0).children('img').eq(0).height();  //300
 			if (picRealHeight<500) picRealHeight = 850;
@@ -642,13 +643,13 @@ function prevNextBtn() {
 			// case 1 : preview height + item height fits in window´s height
 			// case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
 			// case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
-            
+            var ignoreNavBar = false;
             getWinSize();
-            var navHeigth = $('#nav-header').outerHeight();
-			var position = this.$item.data( 'offsetTop' ) + 317 - navHeigth,
+            //var navHeigth = $('#nav-header').outerHeight();
+			//var position = this.$item.data( 'offsetTop' ) + 317 - navHeigth,
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra;
 				//var scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-				var scrollVal = previewOffsetT+1;//-navHeigth +1; //Vahe code// always scroll bottom to bottom of preview image
+				var scrollVal = ignoreNavBar?previewOffsetT+1:previewOffsetT+1-$('#nav-header').outerHeight() ;//Vahe code// always scroll bottom to bottom of preview image
             $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
             
 // EDITED VLAD
