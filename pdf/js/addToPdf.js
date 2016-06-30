@@ -1,3 +1,6 @@
+
+
+
 function getImgElementFromSpan(spanElem)
 {
 	return spanElem.parentElement.children[1].children[0]; //ИСПРАВЬ МЕНЯ
@@ -46,6 +49,7 @@ function unsetImageSmoothDelete(elem)
 }
 function setUnsetButton(elem) // Обработка нажатия на кнопку addToPdf
 {
+	document.getElementById('staticCounterDivId').style.display='block';
 	var picElem = getImgElementFromSpan(elem);
 	var added = setUnsetPicture(picElem);
 	if (added) 
@@ -59,9 +63,14 @@ function setUnsetButton(elem) // Обработка нажатия на кнопку addToPdf
 }
 function setUnsetPicture (elem){
 	var result = addDelCookie(elem);
+
 	var counterDiv = document.getElementById('staticCounterDivId');
 	if (counterDiv!=null)
+	{
 		counterDiv.innerHTML='<p style="margin: 20px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+result.resultCount+')</p>';
+		if (result.resultCount == 0)
+			counterDiv.style.display='none';
+	}
 	return result.added;
 }
 function addDelCookie (elem) { // вернем 0 если удалили // вернем 1 если добавили	
@@ -108,9 +117,36 @@ function addDelCookie (elem) { // вернем 0 если удалили // вернем 1 если добавил
 	setCookie(cookieName,picsArray.join(','),{path:'\/'});// объединяем все что осталось
 	return {added:false , resultCount:picsArray.length};
 }
+
+window.addEventListener('DOMContentLoaded', bodyLoad, false);
+
 function bodyLoad() {
 	var counterDiv = document.getElementById('staticCounterDivId');
-	counterDiv.innerHTML = getCookie(cookieName).split(',').length;
+	var myCookie = getCookie(cookieName);
+	var count = 0;
+	if (myCookie != undefined)
+		count = myCookie.split(',').length;
+		
+	if (count>0)
+	{
+		counterDiv.innerHTML='<p style="margin: 20px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+getCookie(cookieName).split(',').length+')</p>';
+		document.getElementById('staticCounterDivId').style.display='block';	
+		
+	}	
+		var childs = document.getElementById('og-grid').children;  
+		for (var i = 0; i < childs.length ; i++)    
+		{			
+			var addToPadfSpan  = childs[i].children[0];
+			if (checkIfUrlExistsInCookie(getImgElementFromSpan(addToPadfSpan)) == 1)
+			{
+				addToPadfSpan.className  = 'addPdf added';
+			}
+			else
+			{
+				addToPadfSpan.className  = 'addPdf';
+			}
+		}
+	
 }
 function showHideAddToPdfSpan(elem,show)	  
 {

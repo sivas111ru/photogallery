@@ -17,8 +17,9 @@
 }
 .addPdf.added
 {
-	/*opacity:1 !important;*/
-	/*display:block !important; */
+	visibility:visible !important;
+	opacity:1 !important;
+	display:block !important; 
 	background-position:-112px 3px
 }
 .addPdf.added:hover
@@ -27,6 +28,7 @@
 }
 .staticCounter
 {
+	display:none;
 	font-size: 8pt;
 	color: white;
 	z-index: 100;
