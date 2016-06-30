@@ -17,6 +17,14 @@ if ($_POST["type"] && $_POST["images"]) {
     echo('Error. Incorrect Post params.');
     exit();
 }
+//var_dump ($pdfUrlsArray);
+	for ($i = 0; $i <= count($pdfUrlsArray) - 1; $i++) // kastil kotoriy pomenyaet vse umenshennie kartinki na ix analog
+	{
+		$lastPoint = strripos($pdfUrlsArray[$i],'.');
+		$lastLine = strripos($pdfUrlsArray[$i],'-');
+		$pdfUrlsArray[$i] = substr($pdfUrlsArray[$i], 0, $lastLine).substr($pdfUrlsArray[$i], $lastPoint, strlen($pdfUrlsArray[$i])-1); 		
+	}
+//var_dump ($pdfUrlsArray);
 // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="ќбъ€вл€ем все константы">
 define("leftMargin", "99");
@@ -73,6 +81,7 @@ if ($pdfType == 2) {
 if ($pdfType == 3) {
     $picOnPage = 0;
     $leftMargin = 0;
+
     for ($i = 1; $i <= count($pdfUrlsArray) - 1; $i++) {
 
         if ($picOnPage == 0) {
