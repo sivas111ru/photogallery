@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
     drawMenuLines();
 
     $(window).on("resize", drawMenuLines);
-    $(window).on("resize", setTimeout(drawMenuLines,100));
+   // $(window).on("resize", setTimeout(drawMenuLines,100));
 })
 
 

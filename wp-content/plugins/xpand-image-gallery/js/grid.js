@@ -417,7 +417,6 @@ function prevNextBtn() {
         $( ".prevLnk" ).css('right',resLeft);
         $( ".nextLnk" ).css('right',resRight);
         
-        $( "#smMenuBtn" ).css('left',resLeft);
         
 
 	}
