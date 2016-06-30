@@ -52,6 +52,8 @@
 
 
 .og-grid li.og-expanded > a::after {
+    
+    display: none;
 
 	top: auto;
 
@@ -184,7 +186,7 @@
 	width: 100%;
 	overflow: hidden;
 	position: relative; 
-    margin-top: 10px; /* EDITED */   
+    margin-top: 30px; /* EDITED */   
     margin-bottom: 60px; /* EDITED */
 }
 

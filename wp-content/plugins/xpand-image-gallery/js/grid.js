@@ -622,7 +622,7 @@ function prevNextBtn() {
 			getWinSize();
 		    var ignoreNavBar = false;
 			
-			var marginSize = 60;
+			var marginSize = 70;
 			var freeSpace = ignoreNavBar?winsize.height:winsize.height- $('#nav-header').outerHeight()-marginSize;
 			
 			var picRealHeight = this.$previewEl.children('div').eq(0).children('div').eq(0).children('img').eq(0).height(); //850

@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
 			var panelWidth = maxWidthPlusLeft - minLeft;
 			$('#topmenud').css('left',minLeft-23);  // KASTIL
 			$('#topmenud').css('width',panelWidth+23);	// KASTIL
-            $( "#smMenuBtn" ).css('left',panelWidth+173); // NORM KASTIL
+            $( "#smMenuBtn" ).css('left',panelWidth-23); // NORM KASTIL
 		}
 		
 		
