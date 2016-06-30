@@ -226,14 +226,19 @@ function custom_gallery($attr) {
 		<!-- see gallery_shortcode() in wp-includes/media.php -->";
 	$size_class = sanitize_html_class( $size );
 	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-	$output = "<ul id='og-grid' class='og-grid'>";
+	
+	$output = "<script src='../pdf/js/cookie.js'></script><script src='../pdf/js/addToPdf.js'></script><link rel='stylesheet' type='text/css' href='../pdf/css/addToPdf.css'>";
+	$output .= "<div onclick=\"location.href='../pdf/pdf.html';\" class='staticCounter' id='staticCounterDivId'></div>";
+	$output .= "<ul id='og-grid' class='og-grid'>";	
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
 		//$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link_dani($id, $size, false, false) : wp_get_attachment_link_dani($id, $size, true, false, false, true);
         $link = wp_get_attachment_link_dani($id, $size, true, false, false, true);
 
-		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "<{$itemtag} class='gallery-item' style='position:relative'>";
+		//$output .= "<{$itemtag} class='gallery-item'>";
+        $output .= "<span class='addPdf added' style='display: none;' onmouseover='showHideAddToPdfSpan(this,1)' onmouseout='showHideAddToPdfSpan(this,0)' onclick='setUnsetButton(this)'></span>"; // new
 		
 		$output .= "$link";
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
@@ -307,5 +312,5 @@ function wp_get_attachment_link_dani( $id = 0, $size = 'thumbnail', $permalink =
 		
 		$parent_permalink = basename($full_parent_permalink);
 	
-	return apply_filters( 'wp_get_attachment_link_dani', "<a href='$url' data-postname='$parent_title' title='$post_title' data-permalink='$parent_permalink' data-largesrc='$dani' data-href='$url' data-title='Imagen: $attachment_title'>$link_text</a>", $id, $size, $permalink, $icon, $text );
+	return apply_filters( 'wp_get_attachment_link_dani', "<a onmouseover='showHideAddToPdfSpan(this,1)' onmouseout='showHideAddToPdfSpan(this,0)' href='$url' data-postname='$parent_title' title='$post_title' data-permalink='$parent_permalink' data-largesrc='$dani' data-href='$url' data-title='Imagen: $attachment_title'>$link_text</a>", $id, $size, $permalink, $icon, $text );
 }

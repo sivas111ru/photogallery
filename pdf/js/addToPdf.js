@@ -61,7 +61,7 @@ function setUnsetPicture (elem){
 	var result = addDelCookie(elem);
 	var counterDiv = document.getElementById('staticCounterDivId');
 	if (counterDiv!=null)
-		counterDiv.innerHTML=result.resultCount;
+		counterDiv.innerHTML='<p style="margin: 20px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+result.resultCount+')</p>';
 	return result.added;
 }
 function addDelCookie (elem) { // вернем 0 если удалили // вернем 1 если добавили	

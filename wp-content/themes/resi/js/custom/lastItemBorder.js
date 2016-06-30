@@ -4,16 +4,15 @@ jQuery(document).ready(function ($) {
 		var maxWidthPlusLeft = 0;
 		var maxWidth = 0;
 		$('#og-grid > li').each(function () {
-			if ($(this).children().position().left < minLeft)
+			if ($(this).children('a').offset().left < minLeft)
 			{
-				minLeft = $(this).children().position().left;
+				minLeft = $(this).children('a').offset().left;			
 			}			
-			if ($(this).children().position().left + $(this).children().width() > maxWidthPlusLeft)
+			if ($(this).children('a').offset().left + $(this).children('a').width() > maxWidthPlusLeft)
 			{
-				maxWidthPlusLeft = $(this).children().position().left + $(this).children().width();
+				maxWidthPlusLeft = $(this).children('a').offset().left + $(this).children('a').width();			
 			}
         })
-		//alert (minLeft+"-"+maxWidthPlusLeft);
 		if (minLeft == 10000 || maxWidthPlusLeft == 0)
 		{
 			$('#topmenud').css('left', 23);  // KASTIL

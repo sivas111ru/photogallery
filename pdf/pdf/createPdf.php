@@ -140,12 +140,12 @@ function addPageStart($pdf)
     $pdf->SetTextColor(0,0,0);
     $pdf->SetFont('Arial','',27);
     $pdf->SetXY(leftMargin, topTextTopMargin);
-    $pdf->Write(27,'K L E I N');
+    $pdf->Write(27,'K E I T H'); 
 
     $pdf->SetTextColor(169,27,39);
     $pdf->SetFont('Arial','',27);
     $pdf->SetXY(topTextSecondPartLeftMargin, topTextTopMargin);
-    $pdf->Write(27,'P H O T O G R A P H E N');
+    $pdf->Write(27,'S C H O F I E L D');
     $pdf->Image('topLine.png', 0, topLineTopMargin , 1100, 0);
 }
 
@@ -154,7 +154,7 @@ function addPageEnd($pdf)
     $pdf->SetTextColor(0,0,0);
     $pdf->SetFont('Arial','',16);
     $pdf->SetXY(leftMargin, bottomTextTopMargin);
-    $pdf->Write(16,'© Name Lastname |');
+    $pdf->Write(16,'© KEITH SCHOFIELD |');
     $pdf->SetTextColor(169,27,39);
     $pdf->Write(16,' View more ...','http://google.com');
 }
