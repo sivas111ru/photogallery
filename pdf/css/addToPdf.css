@@ -1,5 +1,6 @@
 .addPdf
 {
+	/*z-index:10000000px*/
 	transition: opacity 0.5s ease-out;
 	opacity:0;
 	position:absolute;

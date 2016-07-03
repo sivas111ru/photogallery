@@ -1,17 +1,32 @@
 
-
-
 function getImgElementFromSpan(spanElem)
 {
-	return spanElem.parentElement.children[1].children[0]; //»—ѕ–ј¬№ ћ≈Ќя
+	var parentLiElem;
+	if (spanElem.parentElement.tagName == 'LI')
+		parentLiElem = spanElem.parentElement;
+	if (spanElem.parentElement.parentElement.tagName == 'LI')
+		parentLiElem = spanElem.parentElement.parentElement;
+	if (spanElem.parentElement.parentElement.parentElement.tagName == 'LI')
+		parentLiElem = spanElem.parentElement.parentElement.parentElement;
+
+	return parentLiElem.children[1].children[0]; //»—ѕ–ј¬№ ћ≈Ќя
 }
 function getSpanElementFromNeighbor(elem) 
 {
+	/*var parentLiElem;
+	if (spanElem.parentElement.tagName == 'LI')
+		parentLiElem = spanElem.parentElement;
+	if (spanElem.parentElement.parentElement.tagName == 'LI')
+		parentLiElem = spanElem.parentElement.parentElement;
+	if (spanElem.parentElement.parentElement.parentElement.tagName == 'LI')
+		parentLiElem = spanElem.parentElement.parentElement.parentElement;
+	*/
+	//console.log(elem.parentElement.children[0]);
 	return elem.parentElement.children[0]; //»—ѕ–ј¬№ ћ≈Ќя
 }
 function getImgElementFromSpanInChooser(elem) 
 {
-	
+	//console.log('1233333-'+elem);
 	return elem.parentElement.children[1]; //»—ѕ–ј¬№ ћ≈Ќя
 }
 
@@ -23,6 +38,7 @@ function hasClass(elem, cls) {
 }
 function checkIfUrlExistsInCookie(elem) // передай мне IMG а € тебе скажу он в списке на экспорт в PDF или нет)
 {
+	//console.log(elem);
 	var elemUrl = elem.src;
 
 	var currentCookie = getCookie(cookieName);
