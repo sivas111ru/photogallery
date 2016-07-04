@@ -191,7 +191,7 @@ function resi_scripts() {
 
 	wp_enqueue_script( 'resi-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
     
-    wp_enqueue_script( 'lastItemBorder', get_template_directory_uri() . '/js/custom/lastItemBorder.js', array('jquery'), false, true ); 
+    wp_enqueue_script( 'fixHeader', get_template_directory_uri() . '/js/custom/fixHeader.js', array('jquery'), false, true ); 
     
     wp_enqueue_script( 'grid_image_resize', get_template_directory_uri() . '/js/custom/grid_image_resize.js', array('jquery'), false, true );
 
@@ -257,8 +257,6 @@ function resi_gallery_script_includes( $template ) {
 					
 	        }
 	    }
-
-	    wp_enqueue_script( 'fix_header_height', get_template_directory_uri() . '/js/custom/fix_header_height.js', array ( 'jquery' ), false, true); // new
 
 	    wp_enqueue_script( 'hide_header_on_scroll', get_template_directory_uri() . '/js/custom/hide_header_on_scroll.js', array ( 'jquery' ), false, true); // new
 	 
