@@ -1,4 +1,12 @@
 jQuery(document).ready(function ($) {
+	var $header = $("#nav-header");
+    var $header_space = $("#masthead");
+    var fixHeaderHeight = function() {
+        $header_space.height($header.outerHeight(true));
+    }
+
+    fixHeaderHeight();
+
     var drawMenuLines = function () {
 		var minLeft = 10000;
 		var maxWidthPlusLeft = 0;
@@ -47,8 +55,15 @@ jQuery(document).ready(function ($) {
 
     drawMenuLines();
 
-    $(window).on("resize", drawMenuLines);
-    $(window).on("resize", setTimeout(drawMenuLines,100));
+    $(window).on("resize", function() {
+    	setTimeout(timedOutResizeListener, 1);
+    });
+
+    function timedOutResizeListener(e) {
+    	drawMenuLines();
+    	fixHeaderHeight();
+    }
+    // $(window).on("resize", setTimeout(drawMenuLines,100));
 })
 
 
