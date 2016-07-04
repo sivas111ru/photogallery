@@ -1,6 +1,6 @@
 window.IS_PREVIEW_SHOWN = false;
 
-var MOBILE_SCREEN_RESOLUTION = 540;
+var MOBILE_SCREEN_RESOLUTION = 600;
 
 jQuery(document).ready(function ($) {
   $(window).on("resize", function () {

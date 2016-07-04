@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+  .page-content,
+  .entry-content,
+  .entry-summary {
+      margin: 0 15px 0;
+  }
+
+  .li.gallery-item {
+    position: relative;
+    width: 100%;
+  }
+
+  .og-grid li {
+    margin: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .og-grid li > a,
+  .og-grid li > a img {
+    width: 100%;
+  }
+}
