@@ -1,3 +1,5 @@
+var MOBILE_SCREEN_RESOLUTION = 540;
+
 
 var Grid;
 
@@ -372,6 +374,10 @@ function prevNextBtn() {
 	}
 
 	function showPreview( $item ) {
+// EDITED VLAD
+		if ( window.innerWidth < MOBILE_SCREEN_RESOLUTION ) {
+			return;
+		}
 
 		var preview = $.data( this, 'preview' ),
 			// item´s offset top
@@ -427,6 +433,9 @@ function prevNextBtn() {
 		preview.close();
 		$.removeData( this, 'preview' );
 	}
+
+// EDITED VLAD
+	window.hidePreview = hidePreview;
 
 	// the preview obj / overlay
 	function Preview( $item ) {
@@ -540,6 +549,8 @@ function prevNextBtn() {
 
 		},
 		open : function() {
+			window.IS_PREVIEW_SHOWN = true;
+
 			this.$item.css( 'position', 'static' );
 
 			var span = $('<span />').attr('class', 'addPdf');
@@ -557,6 +568,8 @@ function prevNextBtn() {
 
 		},
 		close : function() {
+			window.IS_PREVIEW_SHOWN = false;
+			
 			this.$item.css( 'position', 'relative' );
 			var self = this,
 				onEndFn = function() {

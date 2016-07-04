@@ -107,6 +107,7 @@ function carga_scripts() {
 	wp_enqueue_style( 'xpgal_style', plugins_url('/css/style.css',__FILE__) );
 	wp_enqueue_script('Modernizr', plugins_url('/js/modernizr.custom.js',__FILE__));
     wp_enqueue_script('grid', plugins_url('/js/grid.js',__FILE__), array( 'jquery', 'Modernizr' ), '', false );
+    wp_enqueue_script('onResizingOpenedPreview', plugins_url('/js/custom/onResizingOpenedPreview.js',__FILE__), array( 'jquery', 'Modernizr' ), '', false );
 	}
 
 add_action('wp_enqueue_scripts', 'carga_scripts');
