@@ -709,7 +709,7 @@ button.toggle-menu {
     height: 45px;
 }
 
-@media screen and (min-width: 1200px) and (min-height: 770px) {
+@media screen and (min-width: 1522px) and (min-height: 770px) {
     .menu-toggle {
         display: none;
     }
@@ -2054,16 +2054,16 @@ body {
 }
 
 #authorName h2 {
-    font-size: 28px;
+    font-size: 26px;
 font-weight: 700;
-line-height: 20px;
+line-height: 25px;
 letter-spacing: 7px;
 }
 
 #authorName h4 {
-font-size: 16px;
+font-size: 15px;
 font-weight: 400;
-line-height: 20px;
+line-height: 25px;
 letter-spacing: 4px;
 }
 
