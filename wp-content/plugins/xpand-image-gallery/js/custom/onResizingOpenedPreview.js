@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
 
       setTimeout(function(){
         $prev_ul.css("height", "");
-      }, 10);
+      }, 100);
 
       window.IS_PREVIEW_SHOWN = false;
     }
