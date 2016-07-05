@@ -682,19 +682,22 @@ function prevNextBtn() {
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra;
 				//var scrollVal = this.height + navHeigth + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
 				var scrollVal = ignoreNavBar?previewOffsetT+1:previewOffsetT+1-$('#nav-header').outerHeight() ;//Vahe code// always scroll bottom to bottom of preview image
-            $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
+//            $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
             
 // EDITED VLAD
             var self = this;
             window.is_preview_opening = true;
             $('#nav-header').removeClass('nav-up').addClass('nav-down');
             
-            $('html, body').animate( { scrollTop : scrollVal }, settings.speed, function() {
-              clearTimeout(self.doit);
-              self.doit = setTimeout(function(){
-                window.is_preview_opening = false;
-              }, settings.speed);
-            });
+            $('html, body')
+              .finish()
+              .clearQueue()
+              .animate( { scrollTop : scrollVal }, settings.speed, function() {
+                clearTimeout(self.doit);
+                self.doit = setTimeout(function(){
+                  window.is_preview_opening = false;
+                }, settings.speed);
+              });
 
 
 		},
