@@ -21,3 +21,11 @@
     width: 100%;
   }
 }
+
+.og-fullimg {
+  cursor: url(../../img/cursor-left.png), default;
+}
+
+.og-fullimg.right-cursor {
+  cursor: url(../../img/cursor-right.png), default;
+}

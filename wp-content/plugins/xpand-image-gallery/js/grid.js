@@ -446,6 +446,8 @@ function prevNextBtn() {
 	}
 	
 	
+  var is_cursor_changed = false;
+  var is_left;
 
 	Preview.prototype = {
 		create : function() {
@@ -566,7 +568,61 @@ function prevNextBtn() {
 				this.positionPreview();
 			}, this ), 25 );
 
+      $(".og-fullimg").on("click", this.imageClickListener);
+
+      $(".og-fullimg").on("mousemove", this.imageMoveListener);
+
 		},
+
+    imageClickListener: function (e) {
+      if ( e.clientX < window.innerWidth / 2 ) {
+        if($currentItem.prev().length){
+          showPreview( $currentItem.prev() );
+          $currentItem = $currentItem.prev();
+        }
+        else{
+          hidePreview();
+        }
+      }
+      else {
+        if($currentItem.next().length){
+          showPreview( $currentItem.next() );
+          $currentItem = $currentItem.next();
+        }
+        else{
+          hidePreview();
+        }
+      }
+    },
+
+    imageMoveListener: function (e) {
+      if ( typeof is_left === "undefined" ) {
+        is_left = e.clientX > window.innerWidth / 2
+      }
+
+      if ( e.clientX > window.innerWidth / 2 ) {
+        if ( is_left ) {
+          is_left = false;
+          is_cursor_changed = true;
+        }
+      }
+      else {
+        if ( !is_left ) {
+          is_left = true;
+          is_cursor_changed = true;
+        }
+      }
+
+      if ( is_cursor_changed ) {
+        if ( is_left ) {
+          $(".og-fullimg").removeClass("right-cursor");
+        }
+        else {
+          $(".og-fullimg").addClass("right-cursor");
+        }
+      }
+    },
+
 		close : function() {
 			window.IS_PREVIEW_SHOWN = false;
 			
@@ -595,6 +651,9 @@ function prevNextBtn() {
 				}
 
 			}, this ), 25 );
+
+      $(".og-fullimg").unbind("click", this.imageClickListener);
+      $(".og-fullimg").unbind("mousemove", this.imageMoveListener);
 			
 			return false;
 
