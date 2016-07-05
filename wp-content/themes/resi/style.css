@@ -2012,6 +2012,7 @@ body {
 .entry-header
 {
     text-align: center;
+    margin-left: 23px;
 }
 
 #mainMenu
@@ -2149,7 +2150,8 @@ letter-spacing: 4px;
 /* Submenu nav */ 
 
 .sub-menu > li {
-    padding-left: 27px !important;
+    padding-left: 10px !important;
+    padding-top: 30px;
 }
 
 .entry-title {

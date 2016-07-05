@@ -46,6 +46,7 @@ class Menu_Image_Plugin {
 		'menu-24x24' => array( 24, 24, false ),
 		'menu-36x36' => array( 36, 36, false ),
 		'menu-400x400' => array( 330, 330, false ),
+        'menu-900x700' => array( 463, 300, false ),
 	);
 
 	/**
