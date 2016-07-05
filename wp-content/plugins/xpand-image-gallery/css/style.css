@@ -424,6 +424,7 @@ margin: 20px 0;
 li.gallery-item{list-style:none !important;}
 
 .prevLnk {
+    display: none;
     cursor: pointer;
     position: absolute;
     bottom: 50%;
@@ -433,6 +434,7 @@ li.gallery-item{list-style:none !important;}
 }
 
 .nextLnk {
+    display: none;
     cursor: pointer;
     position: absolute;
     bottom: 50%;
