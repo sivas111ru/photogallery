@@ -29,6 +29,9 @@ window.is_preview_opening = false;
     if (st > lastScrollTop){
       // scroll down
       console.log("down");
+      if ( window.IS_PREVIEW_SHOWN ) {
+        return;
+      }
       $('#nav-header').removeClass('nav-down').addClass('nav-up');
     } else {
       if(st + $(window).height() < $(document).height()) {
