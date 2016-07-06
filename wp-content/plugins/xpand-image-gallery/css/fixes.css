@@ -9,3 +9,27 @@
     width: 480px;
   }
 }
+
+@media screen and ( max-width: 600px ) {
+  .og-grid {
+    width: 100%;
+  }
+}
+
+.og-grid li > a img.desktop-image {
+  display: block;
+}
+
+.og-grid li > a img.mobile-image {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .og-grid li > a img.desktop-image {
+    display: none;
+  }
+
+  .og-grid li > a img.mobile-image {
+    display: block;
+  }
+}

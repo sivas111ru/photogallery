@@ -295,8 +295,10 @@ function wp_get_attachment_link_dani( $id = 0, $size = 'thumbnail', $permalink =
 
 	if ( $text )
 		$link_text = $text;
-	elseif ( $size && 'none' != $size )
-		$link_text = wp_get_attachment_image( $id, $size, $icon );
+	elseif ( $size && 'none' != $size ) {
+		$link_text = wp_get_attachment_image( $id, $size, $icon, array( 'class' => 'desktop-image' ) );
+		$link_text .= wp_get_attachment_image( $id, "medium_large", $icon, array( 'class' => 'mobile-image' ) );
+	}
 	else
 		$link_text = '';
 
