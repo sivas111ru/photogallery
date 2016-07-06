@@ -416,7 +416,7 @@ function prevNextBtn() {
         var cba = $(window).width();
         var ccc = $( ".og-close" ).width()
       
-        var resLeft = (abc + ( ((cba-abc)/2) )) - ccc;
+        var resLeft = (abc + ( ((cba-abc)/2) )) - (ccc+8);
         var resRight = ( ((cba-abc)/2) );
         
         $( ".og-close" ).css('left',resLeft);
