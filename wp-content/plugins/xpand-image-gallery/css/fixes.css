@@ -1,0 +1,11 @@
+@media screen and ( max-width: 1530px ) {
+  .og-grid {
+    width: 950px;
+  }
+}
+
+@media screen and ( max-width: 1062px ) {
+  .og-grid {
+    width: 480px;
+  }
+}
