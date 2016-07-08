@@ -29,3 +29,11 @@
 .og-fullimg.right-cursor {
   cursor: url(../../img/cursor-right.png), default;
 }
+
+@media screen and (max-width: 1522px) {
+    
+    #primary-menu  img, #primary-menu  .sub-menu {
+        display: none;
+    }
+    
+}

@@ -709,7 +709,7 @@ button.toggle-menu {
     height: 45px;
 }
 
-@media screen and (min-width: 1522px) and (min-height: 770px) {
+@media screen and (min-width: 1522px) {
     .menu-toggle {
         display: none;
     }
@@ -2073,7 +2073,7 @@ letter-spacing: 4px;
 #nav-header {
     position: fixed;
     background: white;
-    z-index: 9999998;
+    z-index: 9999992;
     -webkit-transition: top 0.3s ease-out;
        -moz-transition: top 0.3s ease-out;
         -ms-transition: top 0.3s ease-out;
@@ -2199,7 +2199,7 @@ margin-top: 47px;
     top: 0px;
     width: 50px;
     height: 50px;
-    z-index: 9999998;
+    z-index: 9999999;
 }
 
 

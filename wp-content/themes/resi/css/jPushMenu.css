@@ -2,7 +2,10 @@
 .cbp-spmenu {
     background: #FFF;
     position: fixed;
-    z-index: 9999999;
+    z-index: 9999990;
+    display: none;
+    opacity: 0.9;
+    padding-top: 160px;
 }
 
 .cbp-spmenu ul {
@@ -10,6 +13,7 @@
 	padding: 0;
 	list-style: none;
     z-index: 9999999;
+    text-align: center;
 }
 
 .cbp-spmenu ul a {
@@ -30,12 +34,12 @@
 
 /* Orientation-dependent styles for the content of the menu */
 .cbp-spmenu-vertical {
-    width: 240px;
+    width: 100%;
     height: 100%;
     top: 0;
     z-index: 1000;
     overflow-y: scroll;
-    z-index: 9999999;
+    z-index: 9999991;
 }
 
 .cbp-spmenu-vertical ul a {
@@ -78,6 +82,7 @@
 
 .cbp-spmenu-left.menu-open {
     left: 0px;
+    display: block;
 }
 
 .cbp-spmenu-right.menu-open {
