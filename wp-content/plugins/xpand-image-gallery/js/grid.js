@@ -555,12 +555,12 @@ function prevNextBtn() {
 
 			this.$item.css( 'position', 'static' );
 
-			var span = $('<span />').attr('class', 'addPdf');
+			/*var span = $('<span />').attr('class', 'addPdf');
 			span.attr('onclick','setUnsetButton(this)');
 			span.css('display','block');
 			span.css('opacity','1');
 			this.$item.children('div').append(span);
-			
+			*/
 			setTimeout( $.proxy( function() {	
 				// set the height for the preview and the item
 				this.setHeights();
