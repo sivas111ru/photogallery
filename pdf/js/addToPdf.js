@@ -83,7 +83,7 @@ function setUnsetPicture (elem){
 	var counterDiv = document.getElementById('staticCounterDivId');
 	if (counterDiv!=null)
 	{
-		counterDiv.innerHTML='<p style="margin: 20px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+result.resultCount+')</p>';
+		counterDiv.innerHTML='<p style="margin: 0px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+result.resultCount+')</p>';
 		if (result.resultCount == 0)
 			counterDiv.style.display='none';
 	}
@@ -137,6 +137,15 @@ function addDelCookie (elem) { // вернем 0 если удалили // вернем 1 если добавил
 window.addEventListener('DOMContentLoaded', bodyLoad, false);
 
 function bodyLoad() {
+	
+	/*var staticDiv = document.createElement('div');
+	staticDiv.setAttribute("onclick","location.href='../pdf/pdf.html'");
+	staticDiv.className = "staticCounter";
+	staticDiv.id= 'staticCounterDivId';
+	*/
+
+	/*var navBar = document.getElementById('site-navigation');
+	navBar.appendChild(staticDiv);*/
 	var counterDiv = document.getElementById('staticCounterDivId');
 	var myCookie = getCookie(cookieName);
 	var count = 0;
@@ -145,7 +154,7 @@ function bodyLoad() {
 		
 	if (count>0)
 	{
-		counterDiv.innerHTML='<p style="margin: 20px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+getCookie(cookieName).split(',').length+')</p>';
+		counterDiv.innerHTML='<p style="margin: 0px 0 0 0 ;">YOUR PDF<br>SELECTION<br>('+getCookie(cookieName).split(',').length+')</p>';
 		document.getElementById('staticCounterDivId').style.display='block';	
 		
 	}	

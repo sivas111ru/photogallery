@@ -230,7 +230,7 @@ function custom_gallery($attr) {
 	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
 	
 	$output = "<script src='../pdf/js/cookie.js'></script><script src='../pdf/js/addToPdf.js'></script><link rel='stylesheet' type='text/css' href='../pdf/css/addToPdf.css'>";
-	$output .= "<div onclick=\"location.href='../pdf/pdf.html';\" class='staticCounter' id='staticCounterDivId'></div>";
+	//$output .= "<div onclick=\"location.href='../pdf/pdf.html';\" class='staticCounter' id='staticCounterDivId'></div>";
 	$output .= "<ul id='og-grid' class='og-grid'>";	
 
 	$i = 0;

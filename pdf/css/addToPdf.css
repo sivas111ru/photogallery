@@ -35,17 +35,24 @@
 	z-index: 100;
 	text-align: center;
 	vertical-align: middle;
-	position:fixed;
+	position:absolute;
 	right:50px;
-	top:300px;
+	top:0px;
 	width:75px;
-	height:75px;
-	background-color:black;
-	border-radius: 75px;
+	height:50px;
+    border: 1px solid;
+    border-color: #222;
+    border-radius: 0;
+    background: #222;
 }
+
 .staticCounter:hover
 {
-	background-color:brown;
+	border-color: #666;
+    background: #666;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
 }
 .pics
   {
