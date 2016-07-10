@@ -4,7 +4,8 @@
   .entry-summary {
       margin: 0 15px 0;
   }
-
+        
+        
   .li.gallery-item {
     position: relative;
     width: 100%;
@@ -30,10 +31,8 @@
   cursor: url(../../img/cursor-right.png), default;
 }
 
-@media screen and (max-width: 1522px) {
-    
+
     #primary-menu  img, #primary-menu  .sub-menu {
         display: none;
     }
     
-}

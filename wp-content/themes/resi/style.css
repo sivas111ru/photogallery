@@ -709,7 +709,7 @@ button.toggle-menu {
     height: 45px;
 }
 
-@media screen and (min-width: 1522px) {
+@media screen and (min-width: 1535px) {
     .menu-toggle {
         display: none;
     }
