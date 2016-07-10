@@ -21,6 +21,18 @@
   .og-grid li > a img {
     width: 100%;
   }
+    
+    #SubMenuNavigation > li.current_page_item li {
+    padding-right: 100px;
+}
+    
+}
+
+@media screen and (max-width: 1060px) {
+    #SubMenuNavigation > li.current_page_item li {
+    float: none;
+    padding-right: 100px;
+    }
 }
 
 .og-fullimg {
