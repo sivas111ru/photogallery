@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
             $("#smMenuBtn").css('left', panelWidth - 23); // NORM KASTIL
 
 
-            if ($(window).width() < 1522) {
+            if ($(window).width() < 1522 && $(window).width() > 1050 ) {
                         $(".sub-menu").css('padding-left', minLeft - 55); // NORM KASTIL
             }
             else{
