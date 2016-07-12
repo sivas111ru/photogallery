@@ -67,6 +67,13 @@ jQuery(document).ready(function ($) {
 				$( "#staticCounterDivId" ).css('top',0); 
 				$( "#staticCounterDivId" ).css('left',panelWidth-103); 
 			}
+            
+            if ($(window).width() < 1522 && $(window).width() > 1050 ) {
+                         $(".sub-menu").css('padding-left', minLeft - 55); // NORM KASTIL
+             }
+             else{
+                 $(".sub-menu").css('padding-left', 38); // NORM KASTIL
+             }
 			
 			
 		}
