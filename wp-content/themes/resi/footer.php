@@ -26,7 +26,7 @@
                             
 						<?php else : ?>
                    
-                   <!-- EDITED SIVAS site-info-->
+               
                         
                             
 						<?php endif; ?> 

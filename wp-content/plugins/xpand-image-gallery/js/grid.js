@@ -374,7 +374,7 @@ function prevNextBtn() {
 	}
 
 	function showPreview( $item ) {
-// EDITED VLAD
+// EDITED 
 		if ( window.innerWidth < MOBILE_SCREEN_RESOLUTION ) {
 			return;
 		}
@@ -406,11 +406,10 @@ function prevNextBtn() {
 		// expand preview overlay
         
                                         
-        // $('#nav-header').removeClass('nav-up').addClass('nav-down'); /* EDITED ADD NAV BAR ON PREVIEW SIVAS */
+        // $('#nav-header').removeClass('nav-up').addClass('nav-down'); 
         
 		preview.open();
 
-          /* EDITED SIVAS  Close button and arrows position */
         
         var abc = $('#topmenud').width();  
         var cba = $(window).width();
@@ -434,7 +433,7 @@ function prevNextBtn() {
 		$.removeData( this, 'preview' );
 	}
 
-// EDITED VLAD
+// EDITED
 	window.hidePreview = hidePreview;
 
 	// the preview obj / overlay
@@ -743,7 +742,7 @@ function prevNextBtn() {
 				var scrollVal = ignoreNavBar?previewOffsetT+1:previewOffsetT+1-$('#nav-header').outerHeight() ;//Vahe code// always scroll bottom to bottom of preview image
 //            $('html, body').animate( { scrollTop : scrollVal }, settings.speed );
             
-// EDITED VLAD
+// EDITED 
             var self = this;
             window.is_preview_opening = true;
             $('#nav-header').removeClass('nav-up').addClass('nav-down');

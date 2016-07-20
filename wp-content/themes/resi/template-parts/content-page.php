@@ -15,7 +15,7 @@
 
 		<?php wp_nav_menu(array("menu_id" => "SubMenuNavigation")); ?>
 		<br style="clear:both;" />
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>  <!--EDITED SIVAS -->
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>  
 
 		<!--<br style="clear:both;" />-->
 	</header><!-- .entry-header -->

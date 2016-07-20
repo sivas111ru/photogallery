@@ -43,7 +43,7 @@ function resi_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
     
-    add_image_size( 'featured-image1', 900, 700, false ); /* EDITED SIVAS */
+    add_image_size( 'featured-image1', 900, 700, false );
 
 
 	// This theme uses wp_nav_menu() in one location.
@@ -266,7 +266,7 @@ function resi_gallery_script_includes( $template ) {
 	}
 add_filter( 'template_include', 'resi_gallery_script_includes' );  
 
-/* ADDED BY SIVAS*/
+
 add_filter( 'image_size_names_choose', 'custom_image_sizes_choose' );
 
 function custom_image_sizes_choose( $sizes ) {
@@ -275,7 +275,6 @@ function custom_image_sizes_choose( $sizes ) {
     );
     return array_merge( $sizes, $custom_sizes );
 }
-/* end ADDED BY SIVAS*/
 
 /**
  * Load html5shiv
